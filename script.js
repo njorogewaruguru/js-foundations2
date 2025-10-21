@@ -60,48 +60,106 @@
 
 
 
-function showStock(stock) {
-    for (let i = 0; i < stock.length; i++) {
-        let total = 0;
-        let item = stock[i]
-        console.log(`\nProduct: ${item.product}`)
-        console.log(`Quantity: ${item.quantity}`)
-        console.log(`Price: ${item.price}`)
-        let moneyTiedUp = item.quantity * item.price;
-        total += moneyTiedUp
-        console.log(`Money tied up: ${total}`)
-        let status;
-        if (item.quantity <= 1) {
-            status = 'Restock'
-        } else {
-            status = 'Okay'
-        }
-        console.log(`Status: ${status}`)
+// function showStock(stock) {
+//     for (let i = 0; i < stock.length; i++) {
+//         let total = 0;
+//         let item = stock[i]
+//         console.log(`\nProduct: ${item.product}`)
+//         console.log(`Quantity: ${item.quantity}`)
+//         console.log(`Price: ${item.price}`)
+//         let moneyTiedUp = item.quantity * item.price;
+//         total += moneyTiedUp
+//         console.log(`Money tied up: ${total}`)
+//         let status;
+//         if (item.quantity <= 1) {
+//             status = 'Restock'
+//         } else {
+//             status = 'Okay'
+//         }
+//         console.log(`Status: ${status}`)
 
+//     }
+// }
+
+// let stock = [
+//     {
+//         product: 'Sugar',
+//         quantity: 10,
+//         price: 150
+//     }, {
+//         product: 'Wheat flour',
+//         quantity: 15,
+//         price: 250
+//     },
+//     {
+//         product: 'Maize flour',
+//         quantity: 1,
+//         price: 120
+//     },
+//     {
+//         product: 'Tea leaves',
+//         quantity: 0,
+//         price: 120
+//     }
+
+// ]
+
+// showStock(stock)
+
+
+
+
+function searchBooks(catalog) {
+    for (let i = 0; i < catalog.length; i++) {
+        let book = catalog[i]
+        let title = book.title
+        let author = book.author
+        let isAvailable = book.isAvailable
+        if (isAvailable) {
+            console.log(`
+            Title: ${title} 
+            Author: ${author} 
+            Availablity: ${isAvailable}`)
+
+        } else {
+            console.log(`Not available`)
+        }
     }
 }
 
-let stock = [
-    {
-        product: 'Sugar',
-        quantity: 10,
-        price: 150
-    }, {
-        product: 'Wheat flour',
-        quantity: 15,
-        price: 250
-    },
-    {
-        product: 'Maize flour',
-        quantity: 1,
-        price: 120
-    },
-    {
-        product: 'Tea leaves',
-        quantity: 0,
-        price: 120
-    }
 
+
+
+let catalog = [{
+    title: "The Alchemist",
+    author: "Paulo Coelho",
+    isAvailable: true
+},
+{
+    title: "Sapiens: A Brief History of Humankind",
+    author: "Yuval Noah Harari",
+    isAvailable: false
+},
+{
+    title: "To Kill a Mockingbird",
+    author: "Harper Lee",
+    isAvailable: true
+}, {
+    title: "1984",
+    author: "George Orwell",
+    isAvailable: true
+},
+{
+    title: "The Silent Patient",
+    author: "Alex Michaelides",
+    isAvailable: true
+},
+{
+    title: "Becoming",
+    author: "Michelle Obama",
+    isAvailable: false
+}
 ]
 
-showStock(stock)
+
+searchBooks(catalog)
